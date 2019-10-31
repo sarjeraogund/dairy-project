@@ -1,0 +1,114 @@
+    <!--==========================
+      SignUp Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+    
+        <div class="container">
+          <div class="section-header">
+            <h3>Sign Up</h3>
+          </div>  
+          <div class="form">
+            <form name="form" #f="ngForm" (submit)="f.form.valid && onSubmitSignup()" method="POST" novalidate class="contactForm">
+              <div class="form-group">
+                  <input type="text" 
+                        name="user_id" id="user_id" 
+                        class="form-control" 
+                        placeholder="User Id" 
+                        [(ngModel)]="model.user_id"
+                        #user_id="ngModel"
+                        [ngClass]="{'is-valid': f.submitted && user_id.invalid }"
+                        required/>
+                    <div *ngIf="f.submitted && user_id.invalid" class="invalid-input">
+                        <div *ngIf="user_id.errors?.required">User Id field is Required</div>
+                    </div>
+            </div>
+            <div class="form-group">
+                  <input type="password" 
+                        class="form-control" 
+                        name="password" id="password" 
+                        placeholder="Password" 
+                        [(ngModel)]="model.password"
+                        #password="ngModel"
+                        [ngClass]="{'is-valid': f.submitted && password.invalid }"
+                        required minlength="7"/>
+                    <div *ngIf="f.submitted && password.invalid" class="invalid-input">
+                            <div *ngIf="password.errors?.required">Password field is Required</div>
+                            <div *ngIf="password.errors?.minlength">Password length must be greater than 7.</div>
+                    </div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                      class="form-control" 
+                      name="full_name" id="full_name" 
+                      placeholder="Full Name" 
+                      [(ngModel)]="model.full_name"
+                      #full_name="ngModel"
+                      [ngClass]="{'is-valid': f.submitted && full_name.invalid }"
+                      required/>
+                  <div *ngIf="f.submitted && full_name.invalid" class="invalid-input">
+                          <div *ngIf="full_name.errors?.required">Full Name is Required</div>
+                  </div>         
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 text-center">
+                  <input type="date" 
+                        class="form-control" 
+                        name="dob" id="dob" 
+                        placeholder="Date of Birth" 
+                        [(ngModel)]="model.dob"
+                        #dob="ngModel"
+                        [ngClass]="{'is-valid': f.submitted && dob.invalid }"
+                        required/>
+                    <div *ngIf="f.submitted && dob.invalid" class="invalid-input">
+                            <div *ngIf="dob.errors?.required">Date of Birth is Required</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 text-center">
+                  <input type="text" 
+                        class="form-control" 
+                        name="gender" id="gender" 
+                        placeholder="Gender" 
+                        [(ngModel)]="model.gender"
+                        #gender="ngModel"
+                        [ngClass]="{'is-valid': f.submitted && gender.invalid }"
+                        required/>
+                    <div *ngIf="f.submitted && gender.invalid" class="invalid-input">
+                            <div *ngIf="gender.errors?.required">Gender is Required</div>
+                    </div>
+                  </div>
+            </div>                
+            <div class="form-row">
+              <div class="form-group col-md-6 text-center">
+                <input type="text" 
+                      class="form-control" 
+                      name="email_id" id="email_id" 
+                      placeholder="Email Id" 
+                      [(ngModel)]="model.email_id"
+                      #email_id="ngModel"
+                      [ngClass]="{'is-valid': f.submitted && email_id.invalid }"
+                      required email/>
+                  <div *ngIf="f.submitted && email_id.invalid" class="invalid-input">
+                          <div *ngIf="email_id.errors?.required">Email Id is Required</div>
+                          <div *ngIf="email_id.errors?.email">Enter Valid Email Id</div>
+                  </div>
+              </div>
+              <div class="form-group col-md-6 text-center">
+                <input type="text" 
+                      class="form-control" 
+                      name="mobile_no" id="mobile_no" 
+                      placeholder="Mobile No" 
+                      [(ngModel)]="model.mobile_no"
+                      #mobile_no="ngModel"
+                      [ngClass]="{'is-valid': f.submitted && mobile_no.invalid }"
+                      required minlength="10"/>
+                  <div *ngIf="f.submitted && mobile_no.invalid" class="invalid-input">
+                          <div *ngIf="mobile_no.errors?.required">Mobile No is Required</div>
+                          <div *ngIf="mobile_no.errors?.minlength">Enter valid Mobile No</div>
+                  </div>
+                </div>
+            </div>                
+            <div class="text-center"><button type="submit">Save</button></div>
+            </form>
+          </div>
+          </div>
+    </section><!-- #SignUp -->
