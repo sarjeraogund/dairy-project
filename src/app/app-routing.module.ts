@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 const routes: Route[] = [
@@ -13,6 +14,7 @@ const routes: Route[] = [
   {path:'contactus', component: ContactusComponent},
   {path:'login', component: LoginComponent},
   {path:'signup', component: SignupComponent},
+  {path:'users', component: UsersComponent},
   {path:'**', component: PageNotFoundComponent}
 
 ];

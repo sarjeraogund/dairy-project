@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/shared/api.service';
 
 @Component({
   selector: 'app-signup',
@@ -20,12 +20,11 @@ export class SignupComponent implements OnInit {
     email_id: '',
     mobile_no: ''
   }
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
   ngOnInit() {  }
 
   onSubmitSignup(): void{
-    let url="http://localhost:8080/users";
-    this.http.post(url, this.model).subscribe(
+    this.apiService.signUpUser(this.model).subscribe(
       result => {
         alert("success");
         console.log(result);
@@ -33,13 +32,11 @@ export class SignupComponent implements OnInit {
       },
       error =>{
         alert("error occured");
-      },
-      () => {
-        alert("ok");
       }
     );    
   }
 
+  /* 
   public getUsers(){
     let url1="http://localhost:8080/users/"+this.user_id;
     this.http.get(url1).subscribe((response) => {
@@ -47,7 +44,7 @@ export class SignupComponent implements OnInit {
       console.log(this.response);
       alert("success");
     } )
-  }
+  } */
   
 
 }

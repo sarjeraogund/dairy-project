@@ -12,6 +12,8 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './components/users/users.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent,
     ContactusComponent,
     TopNavigationComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
