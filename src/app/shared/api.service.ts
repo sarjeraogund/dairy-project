@@ -24,7 +24,7 @@ export class ApiService {
     return this.http.put(this.DELETE_USER_URL+user_id, value);
   }
 
-  LoginUser(user_id: string): Observable<Users[]>{
+  loginUser(user_id: string): Observable<Users[]>{
     return this.http.get<Users[]>(this.ALL_USERS_URL+user_id);
   }
 

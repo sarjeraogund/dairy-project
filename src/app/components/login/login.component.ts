@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/api.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Users } from '../users/model/Users';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,14 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class LoginComponent implements OnInit {
 
   user_id: string = '';
-
+  
   model:LoginViewModel = {
     user_id:'',
     password:'',
     rememberme:'',
     invalidLogin: false
   }
-  constructor(private router: Router,private loginservice: AuthenticationService) {}
+  constructor(private router: Router,private loginservice: AuthenticationService, private apiService: ApiService) {}
 
   ngOnInit() {
   }
@@ -28,26 +29,27 @@ export class LoginComponent implements OnInit {
     ) {
       this.router.navigate([''])
       this.model.invalidLogin = false
-    } else
+      alert("login successufull");
+    } else{
       this.model.invalidLogin = true
+      alert("login Unsuccessufull");
+      location.reload();
+    }
   }
 
-  /* onSubmitLogin(): void{
+  onSubmitLogin(): void{
     //user: Users;
-    this.apiService.LoginUser(this.model.user_id).subscribe(
-      result => {
-        //this.model.user_id=result;
-        alert("success");
-        console.log(result);
+    this.apiService.loginUser(this.model.user_id).subscribe(
+      response => {
+        //alert("success");
+        //console.log(response);
+        this.checkLogin();
       },
       error =>{
         alert("error occured");
-      },
-      () => {
-        alert("ok");
       }
     );    
-  } */
+  } 
 }
 
 export interface LoginViewModel{
