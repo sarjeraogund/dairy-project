@@ -6,16 +6,19 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { UsersComponent } from './components/users/users.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AuthguardService } from './services/authguard.service';
 
 
 const routes: Route[] = [
   {path:'', redirectTo:'home', pathMatch:'full' },
-  {path:'home', component: HomeComponent},
-  {path:'contactus', component: ContactusComponent},
+  {path:'home', component: HomeComponent,canActivate:[AuthguardService]},
+  {path:'contactus', component: ContactusComponent,canActivate:[AuthguardService]},
   {path:'login', component: LoginComponent},
+  {path:'logout', component: LogoutComponent,canActivate:[AuthguardService]},
   {path:'signup', component: SignupComponent},
-  {path:'users', component: UsersComponent},
-  {path:'**', component: PageNotFoundComponent}
+  {path:'users', component: UsersComponent,canActivate:[AuthguardService]},
+  {path:'**', component: PageNotFoundComponent,canActivate:[AuthguardService]}
 
 ];
 

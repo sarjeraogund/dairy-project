@@ -1,5 +1,5 @@
     <!--==========================
-      Contact Section
+      Login Section
     ============================-->
     <section id="contact" class="section-bg wow fadeInUp">
     
@@ -11,7 +11,7 @@
           </div>
   
           <div class="form">
-            <form name="form" #f="ngForm" (submit)="f.form.valid && onSubmitLogin()" method="POST" novalidate class="contactForm">
+            <form name="form" #f="ngForm" (submit)="f.form.valid && checkLogin()" method="POST" novalidate class="contactForm">
               <div class="form-row">
                 <div class="form-group col-md-6 text-center">
                   <input type="text" 

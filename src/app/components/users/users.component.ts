@@ -16,14 +16,13 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAllUsers();
+    //this.getAllUsers();
     //this.getOneUser();
   }
 
   public getOneUser() {
-    this.apiService.getAllUser().subscribe(
+    this.apiService.getUser(this.user_id).subscribe(
       response =>{
-        this.users = response;
         console.log(response);
         alert("success");
         //location.reload();

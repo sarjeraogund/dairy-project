@@ -13,6 +13,7 @@ import { TopNavigationComponent } from './components/top-navigation/top-navigati
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UsersComponent } from './components/users/users.component';
     ContactusComponent,
     TopNavigationComponent,
     PageNotFoundComponent,
-    UsersComponent
+    UsersComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
