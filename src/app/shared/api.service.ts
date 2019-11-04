@@ -11,7 +11,9 @@ export class ApiService {
 
   private BASE_URL = "http://localhost:8080/user";
   private SIGN_UP_URL = `${this.BASE_URL}\\insert`;
-  private ALL_USERS_URL = `${this.BASE_URL}\\all`;
+  private ALL_USERS_URL = `${this.BASE_URL}\\all\\`;
+  private DELETE_USER_URL = `${this.BASE_URL}\\delete\\`;
+
   constructor(private http: HttpClient) { }
 
   signUpUser(signup: SignUpViewModel): Observable<any>{
@@ -20,5 +22,13 @@ export class ApiService {
 
   getAllUser(): Observable<Users[]>{
     return this.http.get<Users[]>(this.ALL_USERS_URL);
+  }
+
+  getUser(user_id: string): Observable<Users[]>{
+    return this.http.get<Users[]>(this.ALL_USERS_URL+user_id);
+  }
+
+  deleteUser(user_id: String): Observable<any>{
+    return this.http.delete(this.DELETE_USER_URL+user_id);
   }
 }

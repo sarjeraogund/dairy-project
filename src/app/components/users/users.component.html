@@ -1,1 +1,61 @@
-<p>users works!</p>
+    <!--==========================
+      SignUp Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+    
+        <div class="container">
+          <div class="section-header">
+            <h3>Sign Up</h3>
+          </div>  
+            <div class="form">
+            <form name="form" #f="ngForm" (submit)="f.form.valid && getOneUser()" method="POST" novalidate class="contactForm">
+              <div class="form-group">
+                  <input type="text" 
+                        name="user_id" id="user_id" 
+                        class="form-control" 
+                        placeholder="User Id" 
+                        [(ngModel)]="user_id"
+                        #userid="ngModel"
+                        [ngClass]="{'is-valid': f.submitted && userid.invalid }"
+                        required/>
+                    <div *ngIf="f.submitted && userid.invalid" class="invalid-input">
+                        <div *ngIf="userid.errors?.required">User Id field is Required</div>
+                    </div>
+                </div>           
+            <div class="text-center"><button type="submit">Search</button></div>
+            </form>
+            <div>
+                <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">User Id</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Email Id</th>
+                        <th scope="col">Mobile No</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Date Of Birth</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <th scope="row">1</th>
+                        <td>{{user.user_id}}</td>
+                        <td>{{user.full_name}}</td>
+                        <td>{{user.email_id}}</td>
+                        <td>{{user.mobile_no}}</td>
+                        <td>{{user.gender}}</td>
+                        <td>{{user.dob}}</td>
+                        <td><a (click)="deleteUser(user)">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </td>                        
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+          </div>
+          </div>
+    </section><!-- #SignUp -->
+    
