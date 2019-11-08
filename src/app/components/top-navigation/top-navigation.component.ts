@@ -8,7 +8,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class TopNavigationComponent implements OnInit {
 
-  constructor(private loginService: AuthenticationService) { }
+  constructor(public loginService: AuthenticationService) { }
 
   ngOnInit() {
   }

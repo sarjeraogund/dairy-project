@@ -18,6 +18,10 @@ export class ContactusComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmitData(){
+    
+  }
+
 }
 
 export interface ContactViewModel{
