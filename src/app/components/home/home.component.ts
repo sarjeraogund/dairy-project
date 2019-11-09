@@ -58,4 +58,8 @@ export class HomeComponent implements OnInit {
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
+onSubmit(name: string){
+  alert("ss: "+name);
+}
+
 }

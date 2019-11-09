@@ -12,13 +12,13 @@ import { AuthguardService } from './services/authguard.service';
 
 const routes: Route[] = [
   {path:'', redirectTo:'home', pathMatch:'full' },
-  {path:'home', component: HomeComponent,canActivate:[AuthguardService]},
-  {path:'contactus', component: ContactusComponent,canActivate:[AuthguardService]},
+  {path:'home', component: HomeComponent},
+  {path:'contactus', component: ContactusComponent},
   {path:'login', component: LoginComponent},
   {path:'logout', component: LogoutComponent,canActivate:[AuthguardService]},
   {path:'signup', component: SignupComponent},
   {path:'users', component: UsersComponent,canActivate:[AuthguardService]},
-  {path:'**', component: PageNotFoundComponent,canActivate:[AuthguardService]}
+  {path:'**', component: PageNotFoundComponent}
 
 ];
 

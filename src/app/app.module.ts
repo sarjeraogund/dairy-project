@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     TopNavigationComponent,
     PageNotFoundComponent,
     UsersComponent,
-    LogoutComponent
+    LogoutComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

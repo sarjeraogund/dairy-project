@@ -12,11 +12,11 @@ export class UsersComponent implements OnInit {
   user_id: string = '';
 
   constructor(private apiService: ApiService) {
-    //this.getAllUsers();
+    this.getAllUsers();
   }
 
   ngOnInit() {
-    //this.getAllUsers();
+   //this.getAllUsers();
     //this.getOneUser();
   }
 

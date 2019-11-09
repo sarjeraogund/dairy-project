@@ -9,7 +9,7 @@ import { Users } from '../components/users/model/Users';
 })
 export class ApiService {
 
-  private BASE_URL = "http://localhost:8080/MilkDairyProducts-0.0.1-SNAPSHOT/user";
+  private BASE_URL = window["cfgApiBaseUrl"] + "/user";
   private SIGN_UP_URL = `${this.BASE_URL}\\insert`;
   private ALL_USERS_URL = `${this.BASE_URL}\\all\\`;
   private DELETE_USER_URL = `${this.BASE_URL}\\delete\\`;
