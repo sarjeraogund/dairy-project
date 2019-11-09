@@ -8,6 +8,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { UsersComponent } from './components/users/users.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthguardService } from './services/authguard.service';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 
 const routes: Route[] = [
@@ -18,6 +19,7 @@ const routes: Route[] = [
   {path:'logout', component: LogoutComponent,canActivate:[AuthguardService]},
   {path:'signup', component: SignupComponent},
   {path:'users', component: UsersComponent,canActivate:[AuthguardService]},
+  {path:'productdetails', component: ProductDetailsComponent},
   {path:'**', component: PageNotFoundComponent}
 
 ];
